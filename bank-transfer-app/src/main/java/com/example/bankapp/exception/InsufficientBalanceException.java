@@ -1,4 +1,4 @@
-package com.example.bankapp.exception;
+ package com.example.bankapp.exception;
 
 public class InsufficientBalanceException extends BankException {
 
