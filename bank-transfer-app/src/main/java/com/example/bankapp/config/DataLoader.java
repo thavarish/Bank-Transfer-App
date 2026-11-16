@@ -8,14 +8,15 @@ import org.springframework.stereotype.Component;
 
 import com.example.bankapp.model.Customer;
 import com.example.bankapp.repository.CustomerRepository;
-
-import lombok.RequiredArgsConstructor; 
  
 @Component 
-@RequiredArgsConstructor 
 public class DataLoader implements CommandLineRunner { 
  
     private final CustomerRepository customerRepository; 
+ 
+    public DataLoader(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
  
     @Override 
     public void run(String... args) { 

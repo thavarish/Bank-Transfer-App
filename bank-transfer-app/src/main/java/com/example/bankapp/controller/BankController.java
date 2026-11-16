@@ -19,14 +19,18 @@ import com.example.bankapp.service.BankService;
 import com.example.bankapp.service.TransactionAuditService;
 
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 
 @Controller
-@RequiredArgsConstructor
 public class BankController {
 
     private final BankService bankService;
     private final TransactionAuditService auditService;
+
+    public BankController(BankService bankService,
+                         TransactionAuditService auditService) {
+        this.bankService = bankService;
+        this.auditService = auditService;
+    }
 
     // Dashboard
     @GetMapping("/")
